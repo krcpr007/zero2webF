@@ -1,1 +1,1 @@
-# zero2web
+# Frontend part of ZeroTwo
