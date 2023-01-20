@@ -1,10 +1,10 @@
 import React from 'react';
 
-function FileDetails() {
+function FileDetails(props) {
   return (
     <>
         <div className='flex justify-center items-center h-screen'>
-            <h1 className='text-3xl text-rose-600'>File 1 Details</h1>
+            <h1 className='text-3xl text-rose-600'>{props.name}</h1>
         </div>
     </>
   )
