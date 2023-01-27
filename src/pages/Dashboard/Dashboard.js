@@ -1,31 +1,13 @@
 import React, { useState } from "react";
 import { GiCrossedSabres } from "react-icons/gi";
+import Modal from "./Modal/Modal";
 // import { MdUpload } from 'react-icons/md'
 function Dashboard() {
-    const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
     const editDetails = () => {
         // show and hide details/modal
         setShowModal(!showModal);
     };
-    const handleInputs = (e) => {
-        //this function will handle the input
-        let name, value;
-        name = e.target.name;
-        value = e.target.value;
-      };
-    const updateDetails = async () => {
-        //function for updating the details of blog
-        try {
-          const yes = window.confirm("Confirm do you want to update?"); //confirmation
-          if (yes) {
-            setShowModal(false);
-            editDetails();
-          }
-    
-        } catch (error) {
-          console.log(error);
-        }
-      };
   return (
     <>
       <div className="md:flex justify-between h-screen bg-gray-100">
@@ -59,8 +41,8 @@ function Dashboard() {
             </div>
             <div className="border border-rose-300">
               {/* All files div */}
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-3xl text-3xl float-right m-3" onClick={editDetails}>
-                +
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-3xl text-2xl float-right m-3" onClick={editDetails}>
+                New
               </button>
               <div className="flex justify-center items-center h-52">
                 <h1 className="text-xl">All files</h1>
@@ -77,103 +59,7 @@ function Dashboard() {
       </div>
       {showModal ? (
         <>
-          <div className=" overflow-y-auto overflow-x-hidden fixed m-50 z-50 w-full md:inset-0 h-modal md:h-full">
-            <div className="relative p-4 w-full max-w-2xl h-full md:h-auto">
-              {/* <!-- Modal content --> */}
-              <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                {/* <!-- Modal header --> */}
-                <form>
-                  <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    </h3>
-                    <button
-                      type="button"
-                      onClick={editDetails}
-                      className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                      data-modal-toggle="defaultModal"
-                    >
-                      <GiCrossedSabres className="text-sky-500 text-lg" />
-                      <span className="sr-only">Close modal</span>
-                    </button>
-                  </div>
-                  {/* <!-- Modal body --> */}
-                  <div className="px-5">
-                    <div>
-                      <label
-                        htmlFor="title"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >
-                        File name
-                      </label>
-                      <input
-                        type="text"
-                        name="title"
-                        id="title"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        onChange={handleInputs}
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="desc"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >
-                        Description
-                      </label>
-                      <input
-                        type="text"
-                        name="desc"
-                        id="desc"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        onChange={handleInputs}
-                      />
-                    </div>
-                    <div class="max-w-xl">
-                    <label
-                        htmlFor="desc"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >
-                        Upload
-                      </label>
-                        <label
-                            class="flex justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
-                            <span class="flex items-center space-x-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                </svg>
-                                <span class="font-medium text-gray-600">
-                                    Drop files to Attach, or
-                                    <span class="text-blue-600 underline">browse</span>
-                                </span>
-                            </span>
-                            <input type="file" name="file_upload" class="hidden"/>
-                        </label>
-                    </div>
-                  </div>
-                  {/* <!-- Modal footer --> */}
-                  <div className="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button
-                      data-modal-toggle="defaultModal"
-                      type="button"
-                      className="tailwind-btn"
-                      onClick={updateDetails}
-                    >
-                    </button>
-                    <button
-                      data-modal-toggle="defaultModal"
-                      type="button"
-                      className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-sky-500 rounded-lg border border-sky-500 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-sky-500 dark:border-sky-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
-                      onClick={editDetails}
-                    >
-                      Create
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+          <Modal/>
         </>
       ) : null}
     </>

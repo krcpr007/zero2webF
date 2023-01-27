@@ -8,8 +8,6 @@ import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Signup from "./pages/SignUp/Signup";
 
-
-
 function App() {
   useEffect(() => {
     //for running the script to toggle the the navbar
