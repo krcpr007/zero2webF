@@ -1,0 +1,12 @@
+{
+    "inputs":[
+        {
+            "name":"title",
+            "label":"File name"
+        },
+        {
+            "name":"desc",
+            "label":"Description"
+        }
+    ]
+}
