@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { GiCrossedSabres } from "react-icons/gi";
 import Upload from "./Upload";
 import Input from "./Input.json";
 
-function Modal() {
-  const [showModal, setShowModal] = useState(false);
+function Modal({ setShowModal, showModal }) {
+  // const [showModal, setShowModal] = useState(false);
   const editDetails = () => {
     // show and hide details/modal
     setShowModal(!showModal);
   };
   const handleInputs = (e) => {
     //this function will handle the input
-    let name, value;
-    name = e.target.name;
-    value = e.target.value;
+    // let name, value;
+    // name = e.target.name;
+    // value = e.target.value;
   };
   const updateDetails = async () => {
     //function for updating the details
@@ -38,7 +38,7 @@ function Modal() {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white"></h3>
               <button
                 type="button"
-                onClick={editDetails}
+                onClick={() => setShowModal(!showModal)}
                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                 data-modal-toggle="defaultModal"
               >
@@ -51,18 +51,18 @@ function Modal() {
               {Input.inputs.map((item, i) => (
                 <div>
                   <label
-                  htmlFor={item.name}
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  {item.label}
-                </label>
-                <input
-                  type="text"
-                  name={item.name}
-                  id={item.name}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  onChange={handleInputs}
-                />
+                    htmlFor={item.name}
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    {item.label}
+                  </label>
+                  <input
+                    type="text"
+                    name={item.name}
+                    id={item.name}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    onChange={handleInputs}
+                  />
                 </div>
               ))}
               <Upload />
