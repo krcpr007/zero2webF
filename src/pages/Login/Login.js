@@ -5,7 +5,7 @@ function Login() {
     <>
       <div className="min-h-screen py-6 flex bg-gray-900 flex-col justify-center sm:py-12 pattern">
         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#EE4540] to-[#BB254A] shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
           <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
             <div className="max-w-md mx-auto">
               <div>
@@ -57,7 +57,7 @@ function Login() {
                     <div className="relative">
                       <Link to="/dashboard">
                         <button
-                          className="border hover:shadow-sky-500 border-sky-500 px-3 py-1 font-medium rounded-lg  text-sky-500 hover:bg-sky-500 hover:text-slate-900  text-lg"
+                          className="border border-[#BB254A] px-3 py-1 font-medium rounded-lg  text-[#BB254A] hover:text-[#EE4540]  text-lg"
                           type="submit"
                         >
                           Login
