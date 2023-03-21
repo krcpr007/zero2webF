@@ -5,9 +5,9 @@ function FileSystem({ showFileDetails }) {
     <>
       <div className="flex justify-center items-center h-screen">
         {showFileDetails ? (
-          <h1 className="text-3xl text-blue-600">{showFileDetails?.details}</h1>
+          <h1 className="text-3xl text-[#BB254A]">{showFileDetails?.details}</h1>
         ) : (
-          <h1 className="text-3xl text-rose-600">FILE SYSTEM</h1>
+          <h1 className="text-3xl text-[#EE4540]">FILE SYSTEM</h1>
         )}
       </div>
     </>

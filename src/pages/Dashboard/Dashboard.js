@@ -34,7 +34,7 @@ function Dashboard() {
             <div className="border border-rose-300 flex justify-center items-center">
               <h1 className="p-1 w-2/3 bold text-2xl">All Files</h1>
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-xl text-xl float-right m-2"
+                className="bg-[#BB254A] hover:bg-[#EE4540] text-white py-2 px-4 rounded-xl text-xl float-right m-2"
                 onClick={editDetails}
               >
                 New
