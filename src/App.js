@@ -7,7 +7,14 @@ import Footer from './components/Footer/Footer';
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Signup from "./pages/SignUp/Signup";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init({
+  duration: 2000,
+  once: true,
+  startEvent: 'DOMContentLoaded',
+});
 function App() {
   useEffect(() => {
     //for running the script to toggle the the navbar
